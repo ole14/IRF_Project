@@ -19,6 +19,7 @@ namespace IRF_Projekt
         {
             InitializeComponent();
             LoadTypes();
+            teszt_data.DataSource = allatoks;
         }
 
         private void LoadTypes()
@@ -29,7 +30,7 @@ namespace IRF_Projekt
                 sr.ReadLine();
                 while (!sr.EndOfStream)
                 {
-                    string[] line = sr.ReadLine().Split(';');
+                    string[] line = sr.ReadLine().Split(',');
 
                     Allatok a = new Allatok();
                     a.AnimalTypes = line[0];

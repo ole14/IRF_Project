@@ -31,6 +31,8 @@ namespace IRF_Projekt
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.teszt_data = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.teszt_data)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -52,15 +54,25 @@ namespace IRF_Projekt
             this.button2.Text = "Kiírás excelbe";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // teszt_data
+            // 
+            this.teszt_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.teszt_data.Location = new System.Drawing.Point(12, 112);
+            this.teszt_data.Name = "teszt_data";
+            this.teszt_data.Size = new System.Drawing.Size(356, 326);
+            this.teszt_data.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.teszt_data);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Állatkereskedés";
+            ((System.ComponentModel.ISupportInitialize)(this.teszt_data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +81,7 @@ namespace IRF_Projekt
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView teszt_data;
     }
 }
 
