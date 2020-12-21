@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace IRF_Projekt.Entities
 {
-    public enum Types
+    public enum TypesEnum
     {
+        Kutya,
+        Macska,
+        Madár,
+        Hüllő,
+        Rágcsáló,
+        Díszhal
     }
 }

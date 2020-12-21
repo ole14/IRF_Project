@@ -19,7 +19,16 @@ namespace IRF_Projekt
         {
             InitializeComponent();
             LoadTypes();
+            LoadButtons();     
             teszt_data.DataSource = allatoks;
+        }
+
+        private void LoadButtons()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                
+            }
         }
 
         private void LoadTypes()
@@ -38,6 +47,8 @@ namespace IRF_Projekt
                     allatoks.Add(a);
                 }
             }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
