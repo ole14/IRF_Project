@@ -22,7 +22,6 @@ namespace IRF_Projekt
             LoadButtons();
             LoadTypes();
             teszt_data.DataSource = allatoks;
-            
         }
 
         private void LoadButtons()
@@ -48,18 +47,21 @@ namespace IRF_Projekt
                 butt.Top = sor * 50;
                 butt.Text = b.ToString();
                 butt.Font = new Font(butt.Font.FontFamily, 12, FontStyle.Bold);
-                butt.Click += Butt_Click;
+                butt.BackColor = Color.LightGray;
+                butt.Click += new EventHandler(this.button_click);
                 szoroz++;
                 Controls.Add(butt);
             }
         }
 
-        private void Butt_Click(object sender, EventArgs e)
+        void button_click(object sender, EventArgs e)
         {
-            if ()
-            {
+            Button btn = sender as Button;
+            var animals = (from x in allatoks
+                            where x.AnimalTypes == btn.Text
+                            select x);
 
-            }
+            teszt_data.DataSource = animals.ToList();
         }
 
         private void LoadTypes()
