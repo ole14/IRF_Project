@@ -21,12 +21,11 @@ namespace IRF_Projekt
             InitializeComponent();
             LoadButtons();
             LoadTypes();
-            teszt_data.DataSource = allatoks;
+            typeLabel.Text = "Válaszd ki a fajtát";
         }
 
         private void LoadButtons()
         {
-            int szoroz = 0;
             int sor = 0;
             TypesEnum[] buttons = (TypesEnum[])Enum.GetValues(typeof(TypesEnum));
             foreach (TypesEnum b in buttons)
@@ -34,32 +33,21 @@ namespace IRF_Projekt
                 Button butt = new Button();
                 butt.Width = 120;
                 butt.Height = 50;
-                if (szoroz < 3)
-                {
-                    butt.Left = szoroz * 120;
-                }
-                else
-                {
-                    szoroz = 0;
-                    sor = 1;
-                    butt.Left = szoroz * 120;
-                }
                 butt.Top = sor * 50;
                 butt.Text = b.ToString();
                 butt.Font = new Font(butt.Font.FontFamily, 12, FontStyle.Bold);
                 butt.Click += new EventHandler(this.button_click);
-                szoroz++;
+                sor++;
                 Controls.Add(butt);
             }
             Button butt2 = new Button();
             butt2.Width = 120;
             butt2.Height = 50;
-                butt2.Left = szoroz * 120;
             butt2.Top = sor * 50;
             butt2.Text = "Összes állat";
             butt2.Font = new Font(butt2.Font.FontFamily, 12, FontStyle.Bold);
             butt2.Click += new EventHandler(this.button_click2);
-            szoroz++;
+            sor++;
             Controls.Add(butt2);
         }
 
@@ -68,18 +56,20 @@ namespace IRF_Projekt
             Button btn = sender as Button;
             var animals = (from x in allatoks
                             where x.AnimalTypes == btn.Text
-                            select x);
+                            select x.AnimalName);
 
-            teszt_data.DataSource = animals.ToList();
+            animalBox.DataSource = animals.ToList();
+            typeLabel.Text = btn.Text;
         }
 
         void button_click2(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             var animals = (from x in allatoks
-                           select x);
+                           select x.AnimalName);
 
-            teszt_data.DataSource = animals.ToList();
+            animalBox.DataSource = animals.ToList();
+            typeLabel.Text = btn.Text;
         }
 
         private void LoadTypes()
@@ -98,13 +88,38 @@ namespace IRF_Projekt
                     allatoks.Add(a);
                 }
             }
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LoadTypes();
+        }
 
+        private void animalDelete_Click(object sender, EventArgs e)
+        {
+            dynamic akt = animalBox.SelectedValue;
+
+            var kuka = (from x in allatoks
+                         where x.AnimalName == akt
+                         select x).FirstOrDefault();
+
+            allatoks.Remove(kuka);
+
+            if (typeLabel.Text == "Összes állat")
+            {
+                var animals = (from x in allatoks
+                               select x.AnimalName);
+
+                animalBox.DataSource = animals.ToList();
+            }
+            else
+            {
+                var animals = (from x in allatoks
+                               where x.AnimalTypes == typeLabel.Text
+                               select x.AnimalName);
+
+                animalBox.DataSource = animals.ToList();
+            }
         }
     }
 }
