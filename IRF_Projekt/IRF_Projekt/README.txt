@@ -8,17 +8,29 @@
 Teljesítési terv:
 
 A feladat teljesítéséhez egy kisállat kereskedés állatokra vonatkozó nyílvántartását tűztem ki.
-A teljesítés szempontjai a követelmény szerint fognak elkészülni.
 
-Az állatokat egy adott formátumú csv-ből lehet majd betölteni.
+Az enum funkció az előre megadott típus gombok betöltését csinálja.
+Megnyitásnál, a LoadButtons() funkció betölti az enum által meghatározott elemek gombjait, majd a LoadTypes() funkció felolvassa a csv-t, 
+ami az állatokat és a típusukat tartalmazza.
 
-Az enum funkció felhasználása az állatok listázására fog szolgálni, a csv tartalmazni fog egy oszlopot az állatok
-tömb nevéről, így az enum funkció segítségével egy listába csak a tömb konkrét elemének megfelelő állatok kerülnek
-listázásra egy listboxban.
+Az animalBox-ba kerülnek be a csv-ben található állatok, és ezt a korábban legenerált gombokkal lehet szűrni.
+Az animalBox sorait lehet törölni, viszont a törlés csak a nyitott állományra vonatkozik, a csv fájlt nem írja felül.
 
-A betöltött listán szerkesztési funkció lesz, így az egyes elemeket lehet törölni, aminek következtében az egész állományból
-kikerül az adat.
-
-A módosított adatok exportálhatóak majd xlsx formátumba.
-
-Ez a readme csak egy előre vázolt terv, mivel a komplett működés és hasznos funkció nem tiszta, így ez a a leírás változni fog.
+Fejlesztésre váró funkciók:
+	
+	- CSV beolvasás manuálisan történjen, nem automatán
+	- Háttér adatbázis kapcsolása
+		AnimalData tábla
+			Date Datetime,
+			AnimType varchar(50),
+			AnimName varchar(100),
+			AnimPrice integer,
+			AnimQuantity integer
+	- Háttér adatbázis feltöltése ár és készlet adatokkal
+	- Ár és készlet módosító funkció
+	- A kiválasztott típus alapján excel export
+		- Tartalmazza a kiválasztott lista elemeit
+		- és a hozzájuk kapcsolódó ár és készlet információt
+			(Select first * from AnimalData where AnimType = typeLabel.text Order by Date desc)... itt az aktuális lista kell csak, 
+			ami az esetleges törlés után maradt.
+	- Projekt kinézet átalakítása
