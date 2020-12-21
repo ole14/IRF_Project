@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IRF_Projekt
 {
-    class Allatok
+    public class Allatok
     {
         public string AnimalTypes { get; set; }
         public string AnimalName { get; set; }
