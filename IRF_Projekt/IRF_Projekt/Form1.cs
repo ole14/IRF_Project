@@ -47,11 +47,20 @@ namespace IRF_Projekt
                 butt.Top = sor * 50;
                 butt.Text = b.ToString();
                 butt.Font = new Font(butt.Font.FontFamily, 12, FontStyle.Bold);
-                butt.BackColor = Color.LightGray;
                 butt.Click += new EventHandler(this.button_click);
                 szoroz++;
                 Controls.Add(butt);
             }
+            Button butt2 = new Button();
+            butt2.Width = 120;
+            butt2.Height = 50;
+                butt2.Left = szoroz * 120;
+            butt2.Top = sor * 50;
+            butt2.Text = "Összes állat";
+            butt2.Font = new Font(butt2.Font.FontFamily, 12, FontStyle.Bold);
+            butt2.Click += new EventHandler(this.button_click2);
+            szoroz++;
+            Controls.Add(butt2);
         }
 
         void button_click(object sender, EventArgs e)
@@ -60,6 +69,15 @@ namespace IRF_Projekt
             var animals = (from x in allatoks
                             where x.AnimalTypes == btn.Text
                             select x);
+
+            teszt_data.DataSource = animals.ToList();
+        }
+
+        void button_click2(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            var animals = (from x in allatoks
+                           select x);
 
             teszt_data.DataSource = animals.ToList();
         }
