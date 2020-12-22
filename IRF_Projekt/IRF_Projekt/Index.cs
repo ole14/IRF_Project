@@ -148,9 +148,15 @@ namespace IRF_Projekt
         {
             AnimalProperty ap = new AnimalProperty(animalBox.SelectedValue.ToString());
             ap.ShowDialog();
+            AnimalDataLoad();
         }
 
         private void animalBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            AnimalDataLoad();
+        }
+
+        private void AnimalDataLoad()
         {
             string animalN = animalBox.SelectedValue.ToString();
 

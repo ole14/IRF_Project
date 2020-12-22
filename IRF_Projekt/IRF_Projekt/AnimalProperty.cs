@@ -35,5 +35,27 @@ namespace IRF_Projekt
             quantityBox.Text = keszlet.ToString();
             priceBox.Text = ar.ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var allat = (from x in context.AnimalDatas
+                         where x.AnimName == animalLabel.Text.ToString()
+                         orderby x.Date descending
+                         select x).FirstOrDefault();
+
+            DateTime nowdate = DateTime.UtcNow;
+
+            AnimalData animal = new AnimalData
+            {
+                Date = nowdate,
+                AnimType = allat.AnimType,
+                AnimName = allat.AnimName,
+                AnimPrice = int.Parse(priceBox.Text),
+                AnimQuantity = int.Parse(quantityBox.Text)
+            };
+            context.AnimalDatas.Add(animal);
+            context.SaveChanges();
+            this.Close();
+        }
     }
 }
