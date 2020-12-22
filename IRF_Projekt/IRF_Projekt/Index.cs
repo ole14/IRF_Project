@@ -12,11 +12,12 @@ using System.Windows.Forms;
 
 namespace IRF_Projekt
 {
-    public partial class Form1 : Form
+    public partial class Index : Form
     {
 
         List<Allatok> allatoks = new List<Allatok>();
-        public Form1()
+        Animal_dbEntities context = new Animal_dbEntities();
+        public Index()
         {
             InitializeComponent();
             LoadButtons();
@@ -141,6 +142,30 @@ namespace IRF_Projekt
 
                 animalBox.DataSource = animals.ToList();
             }
+        }
+
+        private void modifyButt_Click(object sender, EventArgs e)
+        {
+            AnimalProperty ap = new AnimalProperty(animalBox.SelectedValue.ToString());
+            ap.ShowDialog();
+        }
+
+        private void animalBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string animalN = animalBox.SelectedValue.ToString();
+
+            var keszlet = (from x in context.AnimalDatas
+                           where x.AnimName == animalN
+                           orderby x.Date descending
+                           select x.AnimQuantity).FirstOrDefault();
+
+            var ar = (from x in context.AnimalDatas
+                      where x.AnimName == animalN
+                      orderby x.Date descending
+                      select x.AnimPrice).FirstOrDefault();
+
+            quantityBox.Text = keszlet.ToString();
+            priceBox.Text = ar.ToString();
         }
     }
 }
