@@ -10,15 +10,25 @@ Teljesítési terv:
 A feladat teljesítéséhez egy kisállat kereskedés állatokra vonatkozó nyílvántartását tűztem ki.
 
 Az enum funkció az előre megadott típus gombok betöltését csinálja.
-Megnyitásnál, a LoadButtons() funkció betölti az enum által meghatározott elemek gombjait, majd a LoadTypes() funkció felolvassa a csv-t, 
+Megnyitásnál, a LoadButtons() funkció betölti az enum által meghatározott elemek gombjait, majd a LoadTypes() funkció felolvassa a program mappájában található csv-t, 
 ami az állatokat és a típusukat tartalmazza.
+
+Ezt a CSV újraolvasása gomb segítségével más forrásból is lehet indítani, de fontos, hogy csak Type és Name oszlop legyen benne.
+A Type-ok a következőek lehetnek, az Enum funkció csak ezeket az elemeket ismeri, a többivel nem fog foglalkozni (elírás esetén se)
+	- Kutya
+	- Macska
+	- Madár
+	- Hüllő (vigyázni kell, mert valamiért a csv készítés során belefutottam a konvertálási problémába, 
+				ha a csv nem jól készül el ezt az osztályt nem ismeri fel a program, mert a Hüll? típust nem tudja értelmezni)
+			CSV pontosvesszővel és UTF8 mentéssel nekem működött, de excelben építettem a csv-t, lehet másik excel verzió esetén ez a probléma nem jön elő
+	- Rágcsáló
+	- Díszhal
 
 Az animalBox-ba kerülnek be a csv-ben található állatok, és ezt a korábban legenerált gombokkal lehet szűrni.
 Az animalBox sorait lehet törölni, viszont a törlés csak a nyitott állományra vonatkozik, a csv fájlt nem írja felül.
 
 Fejlesztésre váró funkciók:
 	
-	- CSV beolvasás manuálisan történjen, nem automatán
 	- Háttér adatbázis kapcsolása
 		AnimalData tábla
 			Date Datetime,
