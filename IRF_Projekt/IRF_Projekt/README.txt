@@ -27,17 +27,24 @@ A Type-ok a következőek lehetnek, az Enum funkció csak ezeket az elemeket ism
 Az animalBox-ba kerülnek be a csv-ben található állatok, és ezt a korábban legenerált gombokkal lehet szűrni.
 Az animalBox sorait lehet törölni, viszont a törlés csak a nyitott állományra vonatkozik, a csv fájlt nem írja felül.
 
-Fejlesztésre váró funkciók:
-	
-	- Háttér adatbázis kapcsolása
+Egy háttér adatbázis felel az ár és készlet adatok nyílvántartásáért (ez nem volt a feladatom része, de ezt a megoldást találtam a
+a legegyszerűbbnek a funkció elkészítéséhez).
+Az adatbázis összességében 1 táblát tartalmaz ami a következő:
+
 		AnimalData tábla
-			Date Datetime,
+			Date Datetime Primary key,
 			AnimType varchar(50),
 			AnimName varchar(100),
 			AnimPrice integer,
 			AnimQuantity integer
-	- Háttér adatbázis feltöltése ár és készlet adatokkal
-	- Ár és készlet módosító funkció
+
+A 2 textbox, quantityBox és priceBox ebből a táblából hozza vissza a kijelölt állat ár és készlet adatait.
+A Nyílvántartott adatok módosítása gombbal megjelenik egy módosító form, amin hasonló logika szerint jelennek meg az adatok.
+Itt lehet módosítani a főoldalon megjelenő információkat, és a módosít gomb megnyomásával egy új sor kerül az adatbázisba.
+Mivel az adatbázisban a Date mező a primary key, és kicsi a valószínűsége, hogy 1 mp alatt ugyanaz az állat módosításra kerüljön,
+így a quantityBox és priceBox minden esetben képes megjeleníteni a legutolsó mentett eredményt az 'order by Date desc' szerint.
+	
+Fejlesztésre váró funkciók:
 	- A kiválasztott típus alapján excel export
 		- Tartalmazza a kiválasztott lista elemeit
 		- és a hozzájuk kapcsolódó ár és készlet információt
