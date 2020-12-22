@@ -34,11 +34,12 @@ namespace IRF_Projekt
             this.animalBox = new System.Windows.Forms.ListBox();
             this.typeLabel = new System.Windows.Forms.Label();
             this.animalDelete = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 355);
+            this.button1.Location = new System.Drawing.Point(0, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 0;
@@ -48,7 +49,7 @@ namespace IRF_Projekt
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(121, 355);
+            this.button2.Location = new System.Drawing.Point(121, 381);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 23);
             this.button2.TabIndex = 1;
@@ -83,11 +84,19 @@ namespace IRF_Projekt
             this.animalDelete.UseVisualStyleBackColor = true;
             this.animalDelete.Click += new System.EventHandler(this.animalDelete_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1, 355);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 20);
+            this.textBox1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 381);
+            this.ClientSize = new System.Drawing.Size(450, 421);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.animalDelete);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.animalBox);
@@ -107,6 +116,7 @@ namespace IRF_Projekt
         private System.Windows.Forms.ListBox animalBox;
         private System.Windows.Forms.Label typeLabel;
         private System.Windows.Forms.Button animalDelete;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
