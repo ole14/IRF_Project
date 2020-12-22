@@ -34,7 +34,7 @@ namespace IRF_Projekt
             this.animalBox = new System.Windows.Forms.ListBox();
             this.typeLabel = new System.Windows.Forms.Label();
             this.animalDelete = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.csvImportBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -84,19 +84,19 @@ namespace IRF_Projekt
             this.animalDelete.UseVisualStyleBackColor = true;
             this.animalDelete.Click += new System.EventHandler(this.animalDelete_Click);
             // 
-            // textBox1
+            // csvImportBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(1, 355);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 20);
-            this.textBox1.TabIndex = 6;
+            this.csvImportBox.Location = new System.Drawing.Point(1, 355);
+            this.csvImportBox.Name = "csvImportBox";
+            this.csvImportBox.Size = new System.Drawing.Size(318, 20);
+            this.csvImportBox.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 421);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.csvImportBox);
             this.Controls.Add(this.animalDelete);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.animalBox);
@@ -116,7 +116,7 @@ namespace IRF_Projekt
         private System.Windows.Forms.ListBox animalBox;
         private System.Windows.Forms.Label typeLabel;
         private System.Windows.Forms.Button animalDelete;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox csvImportBox;
     }
 }
 

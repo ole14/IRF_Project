@@ -90,9 +90,30 @@ namespace IRF_Projekt
             }
         }
 
+        private void LoadTypes(string csv)
+        {
+            allatoks.Clear();
+            using (StreamReader sr = new StreamReader(csv, Encoding.Default))
+            {
+                sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string[] line = sr.ReadLine().Split(',');
+
+                    Allatok a = new Allatok();
+                    a.AnimalTypes = line[0];
+                    a.AnimalName = line[1];
+                    allatoks.Add(a);
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadTypes();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            csvImportBox.Text = ofd.FileName.ToString();
+            LoadTypes(csvImportBox.Text);
         }
 
         private void animalDelete_Click(object sender, EventArgs e)
