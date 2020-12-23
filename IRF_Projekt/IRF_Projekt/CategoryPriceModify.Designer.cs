@@ -36,12 +36,14 @@ namespace IRF_Projekt
             this.modButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Font = new System.Drawing.Font("Script MT Bold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeLabel.Font = new System.Drawing.Font("Script MT Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeLabel.ForeColor = System.Drawing.Color.Yellow;
             this.typeLabel.Location = new System.Drawing.Point(13, 13);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(72, 29);
@@ -180,6 +182,8 @@ namespace IRF_Projekt
             // 
             // modButton
             // 
+            this.modButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.modButton.Location = new System.Drawing.Point(163, 96);
             this.modButton.Name = "modButton";
             this.modButton.Size = new System.Drawing.Size(75, 23);
@@ -200,17 +204,31 @@ namespace IRF_Projekt
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(297, 15);
+            this.listBox1.Location = new System.Drawing.Point(249, 36);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(182, 95);
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBox1.Size = new System.Drawing.Size(147, 82);
             this.listBox1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(250, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Ármódosítás alá eső állatok:";
             // 
             // CategoryPriceModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 126);
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(406, 126);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.modButton);
@@ -218,6 +236,7 @@ namespace IRF_Projekt
             this.Controls.Add(this.percentBox);
             this.Controls.Add(this.typeBox);
             this.Controls.Add(this.typeLabel);
+            this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -238,5 +257,6 @@ namespace IRF_Projekt
         private System.Windows.Forms.Button modButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -40,7 +40,7 @@ namespace IRF_Projekt
             // animalLabel
             // 
             this.animalLabel.AutoSize = true;
-            this.animalLabel.Font = new System.Drawing.Font("Script MT Bold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.animalLabel.Font = new System.Drawing.Font("Script MT Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.animalLabel.Location = new System.Drawing.Point(13, 13);
             this.animalLabel.Name = "animalLabel";
             this.animalLabel.Size = new System.Drawing.Size(72, 29);
@@ -81,6 +81,8 @@ namespace IRF_Projekt
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(156, 110);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -93,6 +95,7 @@ namespace IRF_Projekt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(243, 142);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -100,6 +103,7 @@ namespace IRF_Projekt
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quantityBox);
             this.Controls.Add(this.animalLabel);
+            this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

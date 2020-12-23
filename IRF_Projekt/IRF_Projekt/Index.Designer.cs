@@ -45,6 +45,7 @@ namespace IRF_Projekt
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
@@ -55,11 +56,12 @@ namespace IRF_Projekt
             // 
             // excelButt
             // 
+            this.excelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excelButt.Location = new System.Drawing.Point(121, 381);
             this.excelButt.Name = "excelButt";
             this.excelButt.Size = new System.Drawing.Size(198, 23);
             this.excelButt.TabIndex = 1;
-            this.excelButt.Text = "Kiírás excelbe";
+            this.excelButt.Text = "Kiírás Excelbe";
             this.excelButt.UseVisualStyleBackColor = true;
             this.excelButt.Click += new System.EventHandler(this.excelButt_Click);
             // 
@@ -75,6 +77,7 @@ namespace IRF_Projekt
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
+            this.typeLabel.BackColor = System.Drawing.Color.Transparent;
             this.typeLabel.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typeLabel.Location = new System.Drawing.Point(125, 3);
             this.typeLabel.Name = "typeLabel";
@@ -84,6 +87,7 @@ namespace IRF_Projekt
             // 
             // animalDelete
             // 
+            this.animalDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.animalDelete.Location = new System.Drawing.Point(325, 326);
             this.animalDelete.Name = "animalDelete";
             this.animalDelete.Size = new System.Drawing.Size(124, 23);
@@ -101,6 +105,7 @@ namespace IRF_Projekt
             // 
             // modifyButt
             // 
+            this.modifyButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifyButt.Location = new System.Drawing.Point(325, 89);
             this.modifyButt.Name = "modifyButt";
             this.modifyButt.Size = new System.Drawing.Size(124, 40);
@@ -112,6 +117,7 @@ namespace IRF_Projekt
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(379, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
@@ -120,6 +126,8 @@ namespace IRF_Projekt
             // 
             // priceBox
             // 
+            this.priceBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.priceBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.priceBox.Location = new System.Drawing.Point(331, 63);
             this.priceBox.Name = "priceBox";
             this.priceBox.ReadOnly = true;
@@ -130,6 +138,7 @@ namespace IRF_Projekt
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(368, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
@@ -138,6 +147,8 @@ namespace IRF_Projekt
             // 
             // quantityBox
             // 
+            this.quantityBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.quantityBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.quantityBox.Location = new System.Drawing.Point(331, 24);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.ReadOnly = true;
@@ -147,6 +158,7 @@ namespace IRF_Projekt
             // 
             // catModButt
             // 
+            this.catModButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catModButt.Location = new System.Drawing.Point(325, 135);
             this.catModButt.Name = "catModButt";
             this.catModButt.Size = new System.Drawing.Size(124, 36);
@@ -159,6 +171,8 @@ namespace IRF_Projekt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::IRF_Projekt.Properties.Resources.back;
             this.ClientSize = new System.Drawing.Size(450, 421);
             this.Controls.Add(this.catModButt);
             this.Controls.Add(this.label2);

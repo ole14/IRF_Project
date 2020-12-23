@@ -45,6 +45,8 @@ namespace IRF_Projekt
             typeLabel.Text = "Válaszd ki a fajtát";
             modifyButt.Enabled = false;
             animalDelete.Enabled = false;
+            catModButt.Enabled = false;
+            excelButt.Enabled = false;
         }
         private void LoadButtons()
         {
@@ -84,6 +86,8 @@ namespace IRF_Projekt
             typeLabel.Text = btn.Text;
             modifyButt.Enabled = true;
             animalDelete.Enabled = true;
+            catModButt.Enabled = true;
+            excelButt.Enabled = true;
         }
 
         void button_click2(object sender, EventArgs e)
@@ -96,6 +100,8 @@ namespace IRF_Projekt
             typeLabel.Text = btn.Text;
             modifyButt.Enabled = true;
             animalDelete.Enabled = true;
+            catModButt.Enabled = true;
+            excelButt.Enabled = true;
         }
 
         private void LoadTypes()
