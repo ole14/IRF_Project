@@ -43,8 +43,14 @@ A Nyílvántartott adatok módosítása gombbal megjelenik egy módosító form,
 Itt lehet módosítani a főoldalon megjelenő információkat, és a módosít gomb megnyomásával egy új sor kerül az adatbázisba.
 Mivel az adatbázisban a Date mező a primary key, és kicsi a valószínűsége, hogy 1 mp alatt ugyanaz az állat módosításra kerüljön,
 így a quantityBox és priceBox minden esetben képes megjeleníteni a legutolsó mentett eredményt az 'order by Date desc' szerint.
+
+Kiválasztott kategória százalék alapú átárazása.
+Ez a funkció lehetőséget biztosít, kategória alapon árazni az állatokat, a funkció emelés és csökkentés esetén a megfelelő %-al módosítja az árakat
+és ezeket az árakat rögzíti az adatbázisba.
 	
 Fejlesztésre váró funkciók:
+	- Új állatok esetén is fusson le az árazás, de legyen kezelve a hiba
+	- Új állat esetén a készlet és ár legyen 0
 	- A kiválasztott típus alapján excel export
 		- Tartalmazza a kiválasztott lista elemeit
 		- és a hozzájuk kapcsolódó ár és készlet információt
