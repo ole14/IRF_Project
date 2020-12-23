@@ -26,8 +26,9 @@ namespace IRF_Projekt
             "Utolsó Módosítás Dátuma"
             ,"Állat Típus"
             ,"Állat Neve"
-            ,"Ár"
-            ,"Készlet" 
+            ,"Ár (Forint)"
+            ,"Készlet (darab)"
+            ,"Érték (Forint)"
         };
 
         int LastRow = 0;
@@ -272,6 +273,7 @@ namespace IRF_Projekt
                 values[szamlal, 2] = a.AnimName;
                 values[szamlal, 3] = a.AnimPrice;
                 values[szamlal, 4] = a.AnimQuantity;
+                values[szamlal, 5] = a.AnimPrice * a.AnimQuantity;
                 szamlal++;
             }
 
@@ -281,6 +283,47 @@ namespace IRF_Projekt
 
             int lastRowID = x1Sheet.UsedRange.Rows.Count;
             LastRow = lastRowID;
+
+            FormatTable();
+        }
+
+        private void FormatTable()
+        {
+            Excel.Range header = x1Sheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            header.Font.Bold = true;
+            header.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            header.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            header.EntireColumn.AutoFit();
+            header.Interior.Color = Color.LightYellow;
+            header.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range datumOszlop = x1Sheet.get_Range(GetCell(2, 1), GetCell(LastRow, 1));
+            datumOszlop.Font.Italic = true;
+            datumOszlop.NumberFormat = "mm/dd/yyyy hh:mm:ss";
+            datumOszlop.Interior.Color = Color.LightGray;
+            datumOszlop.EntireColumn.AutoFit();
+            datumOszlop.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThin);
+            datumOszlop.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            datumOszlop.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+
+            Excel.Range szamtartomany = x1Sheet.get_Range(GetCell(2, 4), GetCell(LastRow, 5));
+            szamtartomany.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            szamtartomany.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+            szamtartomany.BorderAround2(Excel.XlLineStyle.xlDash, Excel.XlBorderWeight.xlThin);
+            szamtartomany.Interior.Color = Color.FloralWhite;
+
+            Excel.Range adattart = x1Sheet.get_Range(GetCell(2, 2), GetCell(LastRow, 3));
+            adattart.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            adattart.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+            adattart.BorderAround2(Excel.XlLineStyle.xlDashDot, Excel.XlBorderWeight.xlThin);
+            adattart.Interior.Color = Color.AliceBlue;
+
+            Excel.Range ertektartomany = x1Sheet.get_Range(GetCell(2, 6), GetCell(LastRow, 6));
+            ertektartomany.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            ertektartomany.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+            ertektartomany.Font.Bold = true;
+            ertektartomany.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThin);
+            ertektartomany.Interior.Color = Color.LightGreen;
         }
 
         private string GetCell(int x, int y)
