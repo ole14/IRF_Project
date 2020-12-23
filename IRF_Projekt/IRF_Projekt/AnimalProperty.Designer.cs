@@ -100,7 +100,11 @@ namespace IRF_Projekt
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quantityBox);
             this.Controls.Add(this.animalLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AnimalProperty";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Módosítás";
             this.ResumeLayout(false);
             this.PerformLayout();

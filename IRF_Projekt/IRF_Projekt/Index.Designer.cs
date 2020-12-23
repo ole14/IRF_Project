@@ -40,6 +40,7 @@ namespace IRF_Projekt
             this.priceBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.quantityBox = new System.Windows.Forms.TextBox();
+            this.catModButt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -121,6 +122,7 @@ namespace IRF_Projekt
             this.priceBox.Location = new System.Drawing.Point(331, 63);
             this.priceBox.Name = "priceBox";
             this.priceBox.ReadOnly = true;
+            this.priceBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.priceBox.Size = new System.Drawing.Size(113, 20);
             this.priceBox.TabIndex = 10;
             // 
@@ -138,14 +140,26 @@ namespace IRF_Projekt
             this.quantityBox.Location = new System.Drawing.Point(331, 24);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.ReadOnly = true;
+            this.quantityBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.quantityBox.Size = new System.Drawing.Size(113, 20);
             this.quantityBox.TabIndex = 8;
+            // 
+            // catModButt
+            // 
+            this.catModButt.Location = new System.Drawing.Point(325, 135);
+            this.catModButt.Name = "catModButt";
+            this.catModButt.Size = new System.Drawing.Size(124, 36);
+            this.catModButt.TabIndex = 12;
+            this.catModButt.Text = "Kategória alapú ármódosítás";
+            this.catModButt.UseVisualStyleBackColor = true;
+            this.catModButt.Click += new System.EventHandler(this.catModButt_Click);
             // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 421);
+            this.Controls.Add(this.catModButt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.priceBox);
             this.Controls.Add(this.label1);
@@ -177,6 +191,7 @@ namespace IRF_Projekt
         private System.Windows.Forms.TextBox priceBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox quantityBox;
+        private System.Windows.Forms.Button catModButt;
     }
 }
 

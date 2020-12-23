@@ -15,16 +15,18 @@ namespace IRF_Projekt
     public partial class Index : Form
     {
 
-        List<Allatok> allatoks = new List<Allatok>();
         Animal_dbEntities context = new Animal_dbEntities();
+        List<Allatok> allatoks = new List<Allatok>();
+        
         public Index()
         {
             InitializeComponent();
             LoadButtons();
             LoadTypes();
             typeLabel.Text = "Válaszd ki a fajtát";
+            modifyButt.Enabled = false;
+            animalDelete.Enabled = false;
         }
-
         private void LoadButtons()
         {
             int sor = 0;
@@ -61,6 +63,8 @@ namespace IRF_Projekt
 
             animalBox.DataSource = animals.ToList();
             typeLabel.Text = btn.Text;
+            modifyButt.Enabled = true;
+            animalDelete.Enabled = true;
         }
 
         void button_click2(object sender, EventArgs e)
@@ -71,6 +75,8 @@ namespace IRF_Projekt
 
             animalBox.DataSource = animals.ToList();
             typeLabel.Text = btn.Text;
+            modifyButt.Enabled = true;
+            animalDelete.Enabled = true;
         }
 
         private void LoadTypes()
@@ -170,8 +176,15 @@ namespace IRF_Projekt
                       orderby x.Date descending
                       select x.AnimPrice).FirstOrDefault();
 
-            quantityBox.Text = keszlet.ToString();
-            priceBox.Text = ar.ToString();
+            quantityBox.Text = keszlet.ToString() + " db";
+            priceBox.Text = ar.ToString() + " Ft";
+        }
+
+        private void catModButt_Click(object sender, EventArgs e)
+        {
+            CategoryPriceModify cpm = new CategoryPriceModify(typeLabel.Text.ToString(), allatoks);
+            cpm.ShowDialog();
+            AnimalDataLoad();
         }
     }
 }

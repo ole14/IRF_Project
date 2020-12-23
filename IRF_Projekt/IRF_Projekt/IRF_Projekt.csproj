@@ -83,6 +83,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Animal_sql.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CategoryPriceModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryPriceModify.Designer.cs">
+      <DependentUpon>CategoryPriceModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\SelectedAnimal.cs" />
     <Compile Include="Entities\TypesEnum.cs" />
     <Compile Include="Index.cs">
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnimalProperty.resx">
       <DependentUpon>AnimalProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryPriceModify.resx">
+      <DependentUpon>CategoryPriceModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
