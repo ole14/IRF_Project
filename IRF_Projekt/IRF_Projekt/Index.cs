@@ -31,6 +31,8 @@ namespace IRF_Projekt
             ,"Érték (Forint)"
         };
 
+        bool modifyok = false;
+
         int LastRow = 0;
 
         Excel.Application x1App; // Alkalmazás változó
@@ -43,11 +45,27 @@ namespace IRF_Projekt
             LoadButtons();
             LoadTypes();
             typeLabel.Text = "Válaszd ki a fajtát";
-            modifyButt.Enabled = false;
-            animalDelete.Enabled = false;
-            catModButt.Enabled = false;
-            excelButt.Enabled = false;
+            Modifycheck();
         }
+
+        private void Modifycheck()
+        {
+            if (modifyok == false)
+            {
+                modifyButt.Enabled = false;
+                animalDelete.Enabled = false;
+                catModButt.Enabled = false;
+                excelButt.Enabled = false;
+            }
+            else
+            {
+                modifyButt.Enabled = true;
+                animalDelete.Enabled = true;
+                catModButt.Enabled = true;
+                excelButt.Enabled = true;
+            }
+        }
+
         private void LoadButtons()
         {
             int sor = 0;
@@ -84,10 +102,8 @@ namespace IRF_Projekt
 
             animalBox.DataSource = animals.ToList();
             typeLabel.Text = btn.Text;
-            modifyButt.Enabled = true;
-            animalDelete.Enabled = true;
-            catModButt.Enabled = true;
-            excelButt.Enabled = true;
+            modifyok = true;
+            Modifycheck();
         }
 
         void button_click2(object sender, EventArgs e)
@@ -98,10 +114,8 @@ namespace IRF_Projekt
 
             animalBox.DataSource = animals.ToList();
             typeLabel.Text = btn.Text;
-            modifyButt.Enabled = true;
-            animalDelete.Enabled = true;
-            catModButt.Enabled = true;
-            excelButt.Enabled = true;
+            modifyok = true;
+            Modifycheck();
         }
 
         private void LoadTypes()
@@ -118,6 +132,8 @@ namespace IRF_Projekt
                     a.AnimalTypes = line[0];
                     a.AnimalName = line[1];
                     allatoks.Add(a);
+
+                    HistoryCheck(a.AnimalTypes, a.AnimalName);
                 }
             }
         }
@@ -136,6 +152,7 @@ namespace IRF_Projekt
                     a.AnimalTypes = line[0];
                     a.AnimalName = line[1];
                     allatoks.Add(a);
+                    HistoryCheck(a.AnimalTypes, a.AnimalName);
                 }
             }
         }
@@ -203,6 +220,23 @@ namespace IRF_Projekt
 
             quantityBox.Text = keszlet.ToString() + " db";
             priceBox.Text = ar.ToString() + " Ft";
+        }
+
+        private void HistoryCheck(string atype, string aname)
+        {
+            try
+            {
+                var vanadat = (from x in context.AnimalDatas
+                               where x.AnimName == aname && x.AnimType == atype
+                               orderby x.Date descending
+                               select x.AnimName).First();
+            }
+            catch (Exception)
+            {
+                AnimalError ae = new AnimalError(aname, atype);
+                ae.ShowDialog();
+                HistoryCheck(atype, aname);
+            }
         }
 
         private void catModButt_Click(object sender, EventArgs e)

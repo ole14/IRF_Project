@@ -91,6 +91,12 @@
     </Compile>
     <Compile Include="Entities\SelectedAnimal.cs" />
     <Compile Include="Entities\TypesEnum.cs" />
+    <Compile Include="AnimalError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalError.Designer.cs">
+      <DependentUpon>AnimalError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AnimalError.resx">
+      <DependentUpon>AnimalError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnimalProperty.resx">
       <DependentUpon>AnimalProperty.cs</DependentUpon>
     </EmbeddedResource>
