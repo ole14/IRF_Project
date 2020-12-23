@@ -30,7 +30,7 @@ namespace IRF_Projekt
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.excelButt = new System.Windows.Forms.Button();
             this.animalBox = new System.Windows.Forms.ListBox();
             this.typeLabel = new System.Windows.Forms.Label();
             this.animalDelete = new System.Windows.Forms.Button();
@@ -53,14 +53,15 @@ namespace IRF_Projekt
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // excelButt
             // 
-            this.button2.Location = new System.Drawing.Point(121, 381);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Kiírás excelbe";
-            this.button2.UseVisualStyleBackColor = true;
+            this.excelButt.Location = new System.Drawing.Point(121, 381);
+            this.excelButt.Name = "excelButt";
+            this.excelButt.Size = new System.Drawing.Size(198, 23);
+            this.excelButt.TabIndex = 1;
+            this.excelButt.Text = "Kiírás excelbe";
+            this.excelButt.UseVisualStyleBackColor = true;
+            this.excelButt.Click += new System.EventHandler(this.excelButt_Click);
             // 
             // animalBox
             // 
@@ -169,7 +170,7 @@ namespace IRF_Projekt
             this.Controls.Add(this.animalDelete);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.animalBox);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.excelButt);
             this.Controls.Add(this.button1);
             this.Name = "Index";
             this.Text = "Állatkereskedés";
@@ -181,7 +182,7 @@ namespace IRF_Projekt
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button excelButt;
         private System.Windows.Forms.ListBox animalBox;
         private System.Windows.Forms.Label typeLabel;
         private System.Windows.Forms.Button animalDelete;
